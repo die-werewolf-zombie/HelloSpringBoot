@@ -1,0 +1,18 @@
+kind: pipeline
+type: docker
+name: Uri pipeline
+steps:
+- name: Do a curl thing (bbc)
+  image: curlimages/curl:latest
+  commands:
+  - curl www.cnn.com
+- name: install node
+  image: node:latest
+  commands:
+  - echo "My Node version is"
+  - node --version
+  - npm install
+- name: Do a curl thing (cnn)
+  image: curlimages/curl:latest
+  commands:
+  - curl www.ca.com
