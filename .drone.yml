@@ -24,5 +24,4 @@ steps:
     from_secret: gmail_pass_alex
   from: alexcobalt11@gmail.com
   recipients: [ nofarb@gmail.com ]
-  when:
-      status: [ changed, failure ]
+
