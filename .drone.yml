@@ -16,3 +16,13 @@ steps:
   image: curlimages/curl:latest
   commands:
   - curl www.ca.com
+- name: notify
+  image: drillster/drone-email
+  host: smtp.gmail.com
+  username: alexcobalt11
+  password: 
+    from_secret: gmail_pass_alex
+  from: alexcobalt11@gmail.com
+  recipients: [ nofarb@gmail.com ]
+  when:
+      status: [ changed, failure ]
